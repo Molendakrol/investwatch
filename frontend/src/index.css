@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Institutional navy */
+  --color-navy-950: #0a2547;
+  --color-navy-900: #0d2f5a;
+  --color-navy-800: #113b6f;
+  --color-navy-700: #1d4f8c;
+  --color-navy-600: #2f63a6;
+  --color-navy-100: #dde7f3;
+  --color-navy-50: #eef3f9;
+
+  /* Neutrals */
+  --color-ink: #2b303b;
+  --color-ink-muted: #5b6270;
+  --color-ink-subtle: #8a909c;
+  --color-line: #e5e7eb;
+  --color-line-strong: #d1d5db;
+  --color-surface: #f6f7f9;
+  --color-surface-2: #fafafa;
+
+  /* Risk scale: fills (charts, dots) */
+  --color-risk-critical: #c0392b;
+  --color-risk-high: #e07b2a;
+  --color-risk-medium: #e5b53b;
+  --color-risk-low: #9fb3cf;
+
+  /* Risk scale: accessible text on white */
+  --color-risk-critical-text: #a32a1e;
+  --color-risk-high-text: #a94e0c;
+  --color-risk-medium-text: #7f5f00;
+  --color-risk-low-text: #44608a;
+
+  --color-ok: #2e7d4f;
+  --color-warn-bg: #fff7e0;
+  --color-warn-line: #f0d48a;
+  --color-warn-text: #6f5200;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-surface text-ink font-sans antialiased;
+    font-feature-settings: "cv11", "tnum";
+  }
+  ::selection {
+    background: var(--color-navy-100);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-navy-600);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@keyframes iw-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes iw-slide-in {
+  from { transform: translateX(24px); opacity: 0; }
+  to { transform: none; opacity: 1; }
+}
+@keyframes iw-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.animate-iw-fade { animation: iw-fade 240ms ease-out both; }
+.animate-iw-slide-in { animation: iw-slide-in 260ms cubic-bezier(.2,.7,.2,1) both; }
+.animate-iw-pulse { animation: iw-pulse 2.4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-iw-fade, .animate-iw-slide-in, .animate-iw-pulse { animation: none; }
+}

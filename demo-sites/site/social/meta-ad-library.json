@@ -1,0 +1,41 @@
+{
+  "data": [
+    {
+      "id": "AD-880011",
+      "page_name": "Finanse z Olą",
+      "ad_creative_bodies": [
+        "Zacznij inwestować z Mazowiecki Dom Inwestycyjny S.A. — skorzystaj z mojego kodu OLA100 i odbierz bonus! #współpraca"
+      ],
+      "ad_snapshot_url": "https://facebook.example/ads/library/?id=AD-880011",
+      "ad_delivery_start_time": "2026-11-17",
+      "publisher_platforms": [
+        "facebook",
+        "instagram"
+      ]
+    },
+    {
+      "id": "AD-880012",
+      "page_name": "Złota Ścieżka Wealth Management",
+      "ad_creative_bodies": [
+        "Złota Ścieżka Wealth Management Sp. z o.o. — indywidualne strategie inwestycyjne dopasowane do Twojego profilu ryzyka. Umów pierwszą konsultację inwestycyjną (490 zł) i dowiedz się, które akcje i ETF-y kupić."
+      ],
+      "ad_snapshot_url": "https://facebook.example/ads/library/?id=AD-880012",
+      "ad_delivery_start_time": "2026-11-15",
+      "publisher_platforms": [
+        "facebook"
+      ]
+    },
+    {
+      "id": "AD-880013",
+      "page_name": "Kurs Oszczędzania",
+      "ad_creative_bodies": [
+        "Darmowy e-book: jak zbudować fundusz awaryjny i zaplanować budżet domowy. Materiał ma charakter edukacyjny."
+      ],
+      "ad_snapshot_url": "https://facebook.example/ads/library/?id=AD-880013",
+      "ad_delivery_start_time": "2026-11-12",
+      "publisher_platforms": [
+        "instagram"
+      ]
+    }
+  ]
+}

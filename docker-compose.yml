@@ -1,0 +1,72 @@
+name: investwatch
+
+x-python: &python
+  restart: unless-stopped
+  env_file: .env
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: investwatch
+      POSTGRES_USER: investwatch
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes: [pgdata:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U investwatch"]
+      interval: 5s
+      retries: 10
+
+  api:
+    <<: *python
+    build: ./services/api
+    depends_on:
+      postgres: { condition: service_healthy }
+    environment:
+      DATABASE_URL: postgresql+psycopg://investwatch:${POSTGRES_PASSWORD}@postgres:5432/investwatch
+      OBJECT_STORE_DIR: /data/objects
+      ANALYZER_URL: http://analyzer:8001
+      DEMO_SITE_URL: http://localhost:8080
+      DEMO_MANIFEST: /demo/manifest.json
+    volumes:
+      - objects:/data/objects
+      - ./demo-sites/site:/demo:ro
+    ports: ["8000:8000"]
+
+  analyzer:
+    <<: *python
+    build: ./services/analyzer
+    environment:
+      API_URL: http://api:8000
+
+  worker:
+    <<: *python
+    build: ./services/worker
+    depends_on: [api, analyzer]
+    environment:
+      API_URL: http://api:8000
+      ANALYZER_URL: http://analyzer:8001
+      URL_REWRITE: http://localhost:8080=http://demo-sites
+
+  demo-sites:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    volumes: ["./demo-sites/site:/usr/share/nginx/html:ro"]
+    ports: ["8080:80"]
+
+  frontend:
+    build: ./frontend
+    restart: unless-stopped
+    depends_on: [api]
+    ports: ["3000:80"]
+
+  ollama:
+    image: ollama/ollama:0.40.15
+    profiles: [llm]
+    volumes: [ollama:/root/.ollama]
+
+volumes:
+  pgdata:
+  objects:
+  ollama:

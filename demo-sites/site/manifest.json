@@ -1,0 +1,212 @@
+[
+  {
+    "path": "m2/01-etf-zgodny.html",
+    "kind": "html",
+    "module": "m2",
+    "label": false,
+    "note": "Zgodny: ryzyko przy zyskach, 5 lat wyników, opłaty, źródło"
+  },
+  {
+    "path": "m2/02-cfd-przypis.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Ryzyko tylko w stopce, mała szara czcionka, brak oznaczenia reklamy"
+  },
+  {
+    "path": "m2/03-ryzyko-w-akordeonie.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Ryzyko schowane w zwiniętej sekcji"
+  },
+  {
+    "path": "m2/04-ostrzezenie-po-angielsku.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Przekaz po polsku, ostrzeżenie po angielsku"
+  },
+  {
+    "path": "m2/05-wyniki-historyczne.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Wynik z jednego roku jako nagłówek, brak ostrzeżeń i okresu 5 lat"
+  },
+  {
+    "path": "m2/06-aprobata-knf.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Sugeruje zatwierdzenie przez KNF i bezpieczeństwo"
+  },
+  {
+    "path": "m2/07-ike-prognoza.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Korzyści podatkowe bez zastrzeżeń, prognoza bez ostrzeżenia"
+  },
+  {
+    "path": "m2/08-obligacje-zgodne.html",
+    "kind": "html",
+    "module": "m2",
+    "label": false,
+    "note": "Zgodny: zastrzeżenia podatkowe i ryzyko obok zysku"
+  },
+  {
+    "path": "m2/09-niski-kontrast.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Ryzyko widoczne, ale bladoszare i mniejsze"
+  },
+  {
+    "path": "m2/10-prognoza-zgodna.html",
+    "kind": "html",
+    "module": "m2",
+    "label": false,
+    "note": "Zgodny: prognoza z wymaganym ostrzeżeniem"
+  },
+  {
+    "path": "m2/11-porownanie-z-lokata.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Porównanie z lokatą bez źródła (subtelne naruszenie)"
+  },
+  {
+    "path": "m2/12-mobile-nowrap.html",
+    "kind": "html",
+    "module": "m2",
+    "label": true,
+    "note": "Ryzyko w bloku bez zawijania o stałej szerokości (ucinane na telefonie)"
+  },
+  {
+    "path": "m2/13-drobniejsza-czcionka.html",
+    "kind": "html",
+    "module": "m2",
+    "label": false,
+    "note": "Zgodny z uwagą: ryzyko nieco mniejszą czcionką"
+  },
+  {
+    "path": "m1/01-blog-finfluencera.html",
+    "kind": "html",
+    "module": "m1",
+    "label": true,
+    "note": "Blog z kodem polecającym, bez oznaczenia reklamy"
+  },
+  {
+    "path": "m1/02-ranking-brokerow.html",
+    "kind": "html",
+    "module": "m1",
+    "label": true,
+    "note": "Ranking z linkami partnerskimi"
+  },
+  {
+    "path": "m1/03-artykul-prasowy.html",
+    "kind": "html",
+    "module": "m1",
+    "label": false,
+    "note": "Neutralny artykuł prasowy (wzmianka, nie reklama)"
+  },
+  {
+    "path": "m3/01-family-office.html",
+    "kind": "html",
+    "module": "m3",
+    "label": true,
+    "note": "Family office spoza rejestru, rekomendacje zakupu, success fee"
+  },
+  {
+    "path": "m3/02-wealth-management.html",
+    "kind": "html",
+    "module": "m3",
+    "label": true,
+    "note": "Wealth management spoza rejestru, płatne konsultacje"
+  },
+  {
+    "path": "m3/03-licencjonowany-doradca.html",
+    "kind": "html",
+    "module": "m3",
+    "label": false,
+    "note": "Licencjonowana firma z doradztwem w zakresie zezwolenia"
+  },
+  {
+    "path": "m3/04-blog-edukacyjny.html",
+    "kind": "html",
+    "module": "m3",
+    "label": false,
+    "note": "Blog edukacyjny z zastrzeżeniem"
+  },
+  {
+    "path": "m3/05-konsulting-firmowy.html",
+    "kind": "html",
+    "module": "m3",
+    "label": false,
+    "note": "Doradztwo biznesowe (nie inwestycyjne)"
+  },
+  {
+    "path": "m3/06-kurs-co-kupic.html",
+    "kind": "html",
+    "module": "m3",
+    "label": true,
+    "note": "Kurs z rekomendacjami 'co kupić' w abonamencie"
+  },
+  {
+    "path": "social/instagram-post-01.json",
+    "kind": "social",
+    "module": "m1",
+    "label": true,
+    "note": "Instagram: współpraca z firmą zagraniczną, bonus"
+  },
+  {
+    "path": "social/tiktok-video-01.json",
+    "kind": "social",
+    "module": "m1",
+    "label": true,
+    "note": "TikTok: darmowe akcje za rejestrację z linku"
+  },
+  {
+    "path": "social/facebook-post-01.json",
+    "kind": "social",
+    "module": "m1",
+    "label": false,
+    "note": "Facebook: informacja prasowa, bez promocji"
+  },
+  {
+    "path": "social/youtube-desc-01.json",
+    "kind": "social",
+    "module": "m1",
+    "label": true,
+    "note": "YouTube: sponsor odcinka z kodem"
+  },
+  {
+    "path": "social/telegram-vip-01.json",
+    "kind": "social",
+    "module": "m3",
+    "label": true,
+    "note": "Telegram: płatne sygnały VIP (doradztwo)"
+  },
+  {
+    "path": "social/meta-ad-library.json",
+    "kind": "meta_ads",
+    "module": "m1",
+    "label": null,
+    "note": "Odpowiedź w formacie Meta Ad Library API (ads_archive)",
+    "items": {
+      "https://facebook.example/ads/library/?id=AD-880011": {
+        "module": "m1",
+        "label": true
+      },
+      "https://facebook.example/ads/library/?id=AD-880012": {
+        "module": "m3",
+        "label": true
+      },
+      "https://facebook.example/ads/library/?id=AD-880013": {
+        "module": "m3",
+        "label": false
+      }
+    }
+  }
+]
