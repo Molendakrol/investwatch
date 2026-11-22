@@ -1,0 +1,17 @@
+Tysiące reklam inwestycyjnych dziennie. Część z nich kłamie. Poznaj InvestWatch.
+
+InvestWatch sam przeszukuje strony, filmy i reklamy, porównuje je z rejestrem firm inwestycyjnych KNF, i na żywo pokazuje, co wymaga uwagi.
+
+Wystarczy wkleić link. System pobiera treść, rozpoznaje firmę z rejestru i wykrywa kod polecający influencera. Wynik w kilka sekund.
+
+Moduł drugi sprawdza osiemnaście kryteriów informacji o ryzyku. Każdy zarzut ma cytat z reklamy i podstawę prawną. Ostrzeżenie zapisane drobnym, szarym drukiem? System to zauważy.
+
+Moduł trzeci wykrywa doradztwo bez zezwolenia. Family office, płatne sygnały, grupy VIP. I sprawdza, czy podmiot jest w rejestrze.
+
+Każdy wynik trafia do rejestru alertów. Analityk filtruje po dacie, źródle, ryzyku i module, i prowadzi sprawę od zgłoszenia do zamknięcia.
+
+W panelu kalibracji analityk sam ustawia czułość systemu i od razu widzi, ile naruszeń wykryje, a ile będzie fałszywych alarmów.
+
+Pod spodem pracuje scraper z kolejką zadań i harmonogramem. Szanuje zasady serwisów i zachowuje kopię dowodową każdego materiału.
+
+Otwarte oprogramowanie. Własna infrastruktura. Uruchomienie jedną komendą. InvestWatch. Na straży inwestorów.

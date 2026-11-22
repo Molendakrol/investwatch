@@ -1,5 +1,5 @@
 import { ClipboardPaste, Link2, Loader2, ShieldCheck, TriangleAlert } from 'lucide-react'
-import { useState, type FormEvent } from 'react'
+import { useEffect, useRef, useState, type FormEvent } from 'react'
 import { api } from '../../api/client'
 import { ModuleBadge, buttonClass, inputClass } from '../../components/ui/PageHeader'
 import { RiskBadge } from '../../components/ui/RiskBadge'
@@ -80,15 +80,15 @@ export function LinkCheck() {
     const withScheme = /^https?:\/\//i.test(v) ? v : `https://${v.replace(/^\/+/, '')}`
     try {
       const u = new URL(withScheme)
-      return u.hostname.includes('.') ? u.toString() : null
+      return u.hostname.includes('.') || u.hostname === 'localhost' ? u.toString() : null
     } catch {
       return null
     }
   }
 
-  const check = async (e: FormEvent) => {
-    e.preventDefault()
-    const target = normalize(url)
+  const check = async (e?: FormEvent, preset?: string) => {
+    e?.preventDefault()
+    const target = normalize(preset ?? url)
     if (!target) {
       setError('To nie wygląda na adres strony. Wklej np. strona-brokera.pl albo https://www.youtube.com/watch?v=…')
       return
@@ -120,6 +120,18 @@ export function LinkCheck() {
       setBusy(false)
     }
   }
+
+  // Deep link: #/overview?check=<url> runs the check on load (handy for demos and sharing).
+  const autoRan = useRef(false)
+  useEffect(() => {
+    const preset = new URLSearchParams(window.location.hash.split('?')[1] ?? '').get('check')
+    if (preset && !autoRan.current) {
+      autoRan.current = true
+      setUrl(preset)
+      void check(undefined, preset)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const failed = result && result.status !== 'done'
   const doc = result?.documents[0]

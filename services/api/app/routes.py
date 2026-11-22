@@ -259,6 +259,9 @@ async def check_now(body: CheckIn) -> dict:
                 return None
             thresholds = svc.get_thresholds(s)
             docs = s.scalars(select(Document).where(Document.source_id == source_id).order_by(Document.last_seen.desc())).all()
+            # Only what this run saw (a link can redirect to a different final URL between runs).
+            started = svc.as_utc(job.started_at)
+            docs = [d for d in docs if started is None or svc.as_utc(d.last_seen) >= started] or docs[:1]
             return {
                 "status": job.status, "error": job.error, "duration_ms": job.duration_ms,
                 "documents": [{"id": d.id, "url": d.url, "title": d.title, "author": d.author, "platform": d.platform,

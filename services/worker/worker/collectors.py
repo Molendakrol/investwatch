@@ -80,7 +80,10 @@ def collect_youtube(res: FetchResult) -> list[Item]:
         m = re.search(rf'"{name}":"((?:[^"\\]|\\.)*)"', res.text)
         return json.loads(f'"{m.group(1)}"') if m else None
 
-    title, desc = field("title"), field("shortDescription")
+    soup = BeautifulSoup(res.text, "html.parser")
+    # The page JSON holds many "title" keys (UI labels); the meta tags hold the video's own title.
+    title = _meta(soup, "og:title", "title", "twitter:title") or field("title")
+    desc = field("shortDescription")
     if not desc and not title:
         return collect_html(res)
     text = "\n\n".join(x for x in (title, desc) if x)
